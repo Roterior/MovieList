@@ -17,20 +17,23 @@ public class AllFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpSession session = req.getSession(false);
         String path = req.getRequestURI().substring(req.getContextPath().length());
-        if (path.equals("/user/login") || path.equals("/user/register")) {
-            filterChain.doFilter(servletRequest, servletResponse);
-        }
-        else {
-            if (session != null) {
-                String name = (String)session.getAttribute("login");
-                if (name != null) {
-                    filterChain.doFilter(servletRequest, servletResponse);
-                }
-            }
-            else {
-                throw new ServletException("You shall not pass!");
-            }
-        }
+
+        filterChain.doFilter(servletRequest, servletResponse);
+
+//        if (path.equals("/user/login") || path.equals("/user/register")) {
+//            filterChain.doFilter(servletRequest, servletResponse);
+//        }
+//        else {
+//            if (session != null) {
+//                String name = (String)session.getAttribute("login");
+//                if (name != null) {
+//                    filterChain.doFilter(servletRequest, servletResponse);
+//                }
+//            }
+//            else {
+//                throw new ServletException("You shall not pass!");
+//            }
+//        }
     }
 
     @Override

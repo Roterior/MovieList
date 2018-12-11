@@ -1,5 +1,6 @@
 package com.movielist.main;
 
+import com.movielist.servlets.CORSFilter;
 import com.movielist.servlets.MovieController;
 import com.movielist.servlets.ReviewController;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -10,5 +11,6 @@ public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         register(MovieController.class);
         register(ReviewController.class);
+        register(CORSFilter.class);
     }
 }

@@ -25,14 +25,19 @@ public class MovieAccessServiceImpl implements MovieAccessService {
     private EntityManager em;
 
     @Override
-    public List<Movie> get(double toRating, double fromRating, int toYear, int fromYear, String title) {
+    public List<Movie> get(double toRating, double fromRating, int toYear, int fromYear, String title, int year, double rating, String genre, String mType) {
         String query = "SELECT m FROM Movie m WHERE ";
         if (toRating != 0) query += " m.rating <= :toRating AND ";
         if (fromRating != 0) query += " m.rating >= :fromRating AND ";
         if (toYear != 0) query += " m.releaseYear <= :toYear AND ";
         if (fromYear != 0) query += " m.releaseYear >= :fromYear AND ";
         if (title != null) query += " m.title LIKE :title AND ";
-        if (toRating == 0 && fromRating == 0 && toYear == 0 && fromYear == 0 && title == null) query = "SELECT m FROM Movie m";
+        if (year != 0) query += " m.releaseYear = :year AND ";
+        if (rating != 0) query += " m.rating = :rating AND ";
+        if (genre != null) query += " m.genre = :genre AND ";
+        if (mType != null) query += " m.mType = :mType AND ";
+        if (toRating == 0 && fromRating == 0 && toYear == 0 && fromYear == 0 && title == null && year == 0 && rating == 0 && genre == null && mType == null)
+            query = "SELECT m FROM Movie m";
         else query = query.substring(0, query.length() - 4);
 
         /*
@@ -79,6 +84,10 @@ public class MovieAccessServiceImpl implements MovieAccessService {
         if (toYear != 0) q.setParameter("toYear", toYear);
         if (fromYear != 0) q.setParameter("fromYear", fromYear);
         if (title != null) q.setParameter("title", "%" + title + "%");
+        if (year != 0) q.setParameter("year", year);
+        if (rating != 0) q.setParameter("rating", rating);
+        if (genre != null) q.setParameter("genre", genre);
+        if (mType != null) q.setParameter("mType", mType);
         return q.getResultList();
     }
 

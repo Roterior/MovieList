@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>App</title>
+    <!-- <link rel="icon" href="img/icon.png"> -->
+</head>
+<body>
+    <div id="root"></div>
+    <header>
+		<div>
+			<a href="#">Search</a>
+			<span>|</span>
+			<a href="#">My movies</a>
+		</div>
+		<div class="home">
+			<span>MovieList</span>
+            <!-- img/icon.png -->
+			<a href="#"><img src="" alt="logo"></a>
+		</div>
+	</header>
+	<section class="container">
+		<form name="select" action="" onsubmit="someData()" method="get">
+			<div class="selectors">
+				<select name="mType">
+			 		<option>Select Type</option>
+		  			<option>Movie</option>
+			  		<option>TV Series</option>
+				</select>
+				<select name="genre">
+		 			<option>Select Genre</option>
+			  		<option>Action</option>
+		  			<option>Adventure</option>
+			  		<option>Apocalypse</option>
+			 		<option>Comedy</option>
+		  			<option>Drama</option>
+			  		<option>Thriller</option>
+				</select>
+				<select name="year">
+					<option>Select Year</option>
+					<option>2018</option>
+					<option>2017</option>
+					<option>2016</option>
+					<option>2015</option>
+					<option>2014</option>
+					<option>2013</option>
+					<option>2012</option>
+					<option>2011</option>
+					<option>2010</option>
+					<option>2009</option>
+				</select>
+			</div>
+			<div class="search_field">
+		   		<input name="title" type="search" placeholder="Search Movie..." class="sbutton">
+		   		<input type="submit" value="Search" class="sfield">
+			</div>
+		</form>
+		<table class="container table">
+			<tr class="trmain">
+				<td></td>
+				<td>Title</td>
+				<td>Type</td>
+				<td>Genre</td>
+				<td>Year</td>
+				<td>Rating</td>
+			</tr>
+			<tr>
+                <!-- img/venom.jpg -->
+				<td><img src="" alt="img"></td>
+				<td>Venom</td>
+				<td>Movie</td>
+				<td>Thriller</td>
+				<td>2018</td>
+				<td>7</td>
+			</tr>
+			<tr>
+                <!-- img/thewalkingdead.jpg -->
+				<td><img src="" alt="img"></td>
+				<td>The Walking Dead</td>
+				<td>TV Series</td>
+				<td>Apocalypse</td>
+				<td>2010</td>
+				<td>8.4</td>
+			</tr>
+			<tr>
+                <!-- img/theshawshankredemption.jpg -->
+				<td><img src="" alt="img"></td>
+				<td>The Shawshank Redemption</td>
+				<td>Movie</td>
+				<td>Drama</td>
+				<td>1994</td>
+				<td>9.3</td>
+			</tr>
+			<tr>
+                <!-- img/walle.jpg -->
+				<td><img src="" alt="img"></td>
+				<td>WALL-E</td>
+				<td>Movie</td>
+				<td>Adventure</td>
+				<td>2008</td>
+				<td>8.4</td>
+			</tr>
+			<tr>
+                <!-- img/up.jpg -->
+				<td><img src="" alt="img"></td>
+				<td>Up</td>
+				<td>Movie</td>
+				<td>Adventure</td>
+				<td>2009</td>
+				<td>8.3</td>
+			</tr>
+		</table>
+		<div class="page">
+			<button><<</button><button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>>></button>
+		</div>
+	</section>
+	<footer>
+		<div>
+			<span>Copyright © 2018 AlexIf. All rights reserved.</span>
+		</div>
+	</footer>
+</body>
+</html>

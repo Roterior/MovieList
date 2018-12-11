@@ -20,8 +20,8 @@ public class MovieServiceImpl implements MovieService {
     private final MovieAccessService movieAccessService;
 
     @Override
-    public List<Movie> get(double toRating, double fromRating, int toYear, int fromYear, String title) {
-        return movieAccessService.get(toRating, fromRating, toYear, fromYear, title);
+    public List<Movie> get(double toRating, double fromRating, int toYear, int fromYear, String title, int year, double rating, String genre, String mType) {
+        return movieAccessService.get(toRating, fromRating, toYear, fromYear, title, year, rating, genre, mType);
     }
 
     @Override

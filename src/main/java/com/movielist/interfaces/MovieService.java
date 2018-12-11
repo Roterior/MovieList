@@ -14,5 +14,5 @@ public interface MovieService {
 
     List<TitleType> getTitleType();
 
-    List<Movie> get(double toRating, double fromRating, int toYear, int fromYear, String title);
+    List<Movie> get(double toRating, double fromRating, int toYear, int fromYear, String title, int year, double rating, String genre, String mType);
 }
